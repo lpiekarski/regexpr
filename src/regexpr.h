@@ -1,8 +1,7 @@
-//
-// Created by Lukasz on 2019-04-17.
-//
+#if !defined(__REGEXPR_H__)
+#define __REGEXPR_H__
 
-#ifndef REGEXPR_REGEXPR_H
-#define REGEXPR_REGEXPR_H
+#include "automata.h"
+#include "dfa.h"
 
-#endif //REGEXPR_REGEXPR_H
+#endif // __REGEXPR_H__
