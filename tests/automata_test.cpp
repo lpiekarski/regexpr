@@ -2,7 +2,7 @@
 #include <string>
 
 #include "tests.h"
-#include "../src/automata.h"
+#include "../src/regexpr.h"
 
 #define TESTS_NUM 3
 
