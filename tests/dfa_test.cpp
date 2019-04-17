@@ -1,10 +1,15 @@
 #include "tests.h"
+#include "../src/regexpr.h"
 
-#include "../src/dfa.h"
-
-#define TESTS_NUM 2
+#define TESTS_NUM 1
 
 int test_01() {
+    testInfoLog(stdout, "constructors test");
+
+    assertNoException(DFA());
+    assertNoException(DFA(Alphabet("123456")));
+    assertNoException(DFA(1500, Alphabet("123456")));
+
     return TEST_SUCCESS;
 }
 
