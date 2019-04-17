@@ -16,6 +16,8 @@ public:
     size_t charId(char c) const;
 
     int compare(char c1, char c2) const;
+
+    std::string str() const;
 };
 
 #endif // __AUTOMATA_H__

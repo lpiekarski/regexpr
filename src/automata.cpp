@@ -13,7 +13,7 @@ public:
 
 Alphabet::Alphabet(): s("") {}
 
-Alphabet::Alphabet(const std::string &str): s(str) {
+Alphabet::Alphabet(const std::string &str): s("") {
     std::array<bool, UCHAR_MAX + 1> used_chars = {};
     for (size_t i = 0; i <= UCHAR_MAX; ++i)
         used_chars[i] = false;
@@ -44,4 +44,8 @@ int Alphabet::compare(char c1, char c2) const {
     else if (cid1 < cid2)
         return -1;
     return 0;
+}
+
+std::string Alphabet::str() const {
+    return s;
 }
