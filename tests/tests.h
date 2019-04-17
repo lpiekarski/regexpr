@@ -2,16 +2,19 @@
 #define __TESTS_H__
 
 #include <cstdio>
+#include <exception>
 #include <string>
 
 #define TEST_ASSERTION_FAILED (0)
 #define TEST_SUCCESS (1)
+#define TEST_EXCEPTION (2)
 
 std::string testContext;
 
 const char *test_result[] = {
         "assertion failed",
-        "success"
+        "success",
+        "exception"
 };
 
 #define assert(pred)\
@@ -22,6 +25,19 @@ const char *test_result[] = {
                 __LINE__\
                 );\
         return TEST_ASSERTION_FAILED;\
+    }
+
+#define assertNoException(prog)\
+    try {\
+        prog;\
+    } catch (const std::exception &e) {\
+        fprintf(stderr,\
+                "%s:%d noexcept assertion failed: %s\n",\
+                __func__,\
+                __LINE__,\
+                e.what()\
+                );\
+        return TEST_EXCEPTION;\
     }
 
 #define testInfoLog(stream, msg)\
