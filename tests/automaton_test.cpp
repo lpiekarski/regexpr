@@ -26,7 +26,21 @@ int test_02() {
     assert(a.charId('1') == 2);
     assert(a.charId('4') == 3);
 
-    return TEST_SUCCESS;
+    try {
+        a.charId('0');
+    } catch (const std::exception &e) {
+    try {
+        a.charId('a');
+    } catch (const std::exception &e) {
+    try {
+        a.charId('\n');
+    } catch (const std::exception &e) {
+        return TEST_SUCCESS;
+    }
+    }
+    }
+
+    return TEST_EXCEPTION;
 }
 
 int test_03() {
