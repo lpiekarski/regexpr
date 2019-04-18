@@ -1,15 +1,6 @@
 #include <array>
-#include <exception>
 
-#include "automata.h"
-
-class CharacterOutOfAlphabet : public std::exception {
-public:
-    char const *what() const noexcept override {
-        return "CharacterOutOfAlphabet";
-    }
-
-};
+#include "automaton.h"
 
 Alphabet::Alphabet(): s("") {}
 

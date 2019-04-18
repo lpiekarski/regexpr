@@ -1,7 +1,22 @@
 #if !defined(__AUTOMATA_H__)
 #define __AUTOMATA_H__
 
+#include <exception>
 #include <string>
+
+class CharacterOutOfAlphabet : public std::exception {
+public:
+    char const *what() const noexcept override {
+        return "CharacterOutOfAlphabet";
+    }
+};
+
+class InvalidAutomaton : public std::exception {
+public:
+    char const *what() const noexcept override {
+        return "InvalidAutomaton";
+    }
+};
 
 class Alphabet {
 private:
