@@ -1,7 +1,8 @@
 #if !defined(__REGEXPR_H__)
 #define __REGEXPR_H__
 
-#include "automata.h"
+#include "automaton.h"
 #include "dfa.h"
+#include "nfa.h"
 
 #endif // __REGEXPR_H__
