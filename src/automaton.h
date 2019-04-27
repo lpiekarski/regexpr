@@ -1,5 +1,5 @@
-#if !defined(__AUTOMATA_H__)
-#define __AUTOMATA_H__
+#if !defined(__AUTOMATON_H__)
+#define __AUTOMATON_H__
 
 #include <exception>
 #include <string>
@@ -35,4 +35,4 @@ public:
     std::string str() const;
 };
 
-#endif // __AUTOMATA_H__
+#endif // __AUTOMATON_H__
